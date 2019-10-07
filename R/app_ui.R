@@ -3,20 +3,22 @@ app_ui <- function() {
   tagList(
     # Leave this function for adding external resources
     golem_add_external_resources(),
-    # List the first level UI elements here 
+    # List the first level UI elements here
     fluidPage(
       h1("metrics")
-    )
+    ),
+    actionButton("browser", "browser"),
+    tags$script("$('#browser').hide();")
   )
 }
 
 #' @import shiny
 golem_add_external_resources <- function(){
-  
+
   addResourcePath(
     'www', system.file('app/www', package = 'metrics')
   )
- 
+
   tags$head(
     golem::activate_js(),
     golem::favicon()

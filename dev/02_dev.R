@@ -1,18 +1,19 @@
 # Building a Prod-Ready, Robust Shiny Application.
-# 
-# Each step is optional. 
-# 
+#
+# Each step is optional.
+#
 
 # 2. All along your project
 
 ## 2.1 Add modules
-## 
-golem::add_module( name = "my_first_module" ) # Name of the module
+##
+golem::add_module( name = "timelinePlot" ) # Name of the module
 golem::add_module( name = "my_other_module" ) # Name of the module
 
 ## 2.2 Add dependencies
 
 usethis::use_package( "thinkr" ) # To call each time you need a new package
+usethis::use_package( "plotly" )
 
 ## 2.3 Add tests
 
@@ -30,6 +31,7 @@ golem::add_css_file( "custom" )
 
 # 3. Documentation
 
+
 ## 3.1 Vignette
 usethis::use_vignette("metrics")
 devtools::build_vignettes()
@@ -40,6 +42,6 @@ usethis::use_github()
 usethis::use_travis()
 usethis::use_appveyor()
 
-# You're now set! 
+# You're now set!
 # go to dev/03_deploy.R
 rstudioapi::navigateToFile("dev/03_deploy.R")
